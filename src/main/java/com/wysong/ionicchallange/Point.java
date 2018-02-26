@@ -2,9 +2,6 @@ package com.wysong.ionicchallange;
 
 public class Point extends java.awt.Point {
 
-    public Point() {
-    }
-
     public Point(int x, int y) {
         super(x, y);
     }

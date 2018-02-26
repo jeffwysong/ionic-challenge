@@ -19,14 +19,11 @@ public class MatrixChecker {
                 }
             }
         }
-        printArray(toCheck);
-        System.out.println("");
-        printArray(toReturn);
         return toReturn;
     }
 
 
-    private List<Point> getPoints(Boolean[][] toCheck) {
+    public List<Point> getPoints(Boolean[][] toCheck) {
         List<Point> points = new ArrayList<>();
         for (int row = 0; row < toCheck.length; row++) {
             Boolean[] rows = toCheck[row];
@@ -79,22 +76,8 @@ public class MatrixChecker {
         MatrixChecker matrixChecker = new MatrixChecker();
         Boolean[][] threshold = matrixChecker.aboveThreshold(table, 200);
         List<Point> points = matrixChecker.getPoints(threshold);
-        for (Point point : points) {
-            System.out.println(point);
-        }
 
         System.out.println("***********");
-
-        AdjacentPoint adjacentPoint = new AdjacentPoint();
-        Set<Set<Point>> adjacentPointsSet = adjacentPoint.getAdjacentPointsSet(threshold);
-        for (Set<Point> pointSet : adjacentPointsSet) {
-            StringBuilder sb = new StringBuilder();
-            for (Point point : pointSet) {
-                sb.append(point);
-            }
-            System.out.println(sb.toString());
-        }
-
         System.out.println("***********");
         System.out.println("***********");
 
@@ -103,6 +86,7 @@ public class MatrixChecker {
         }
         System.out.println();
 
+        AdjacentPoint adjacentPoint = new AdjacentPoint();
         Set<Set<Point>> adjacents = adjacentPoint.getAdjacents(points);
         for (Set<Point> pointSet : adjacents) {
             StringBuilder sb = new StringBuilder();
