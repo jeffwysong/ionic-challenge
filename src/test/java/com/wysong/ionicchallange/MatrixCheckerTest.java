@@ -102,6 +102,7 @@ public class MatrixCheckerTest {
             }
             System.out.println(sb.toString());
         }
+        assertEquals(1, adjacents.size());
 
 
         for (Point point : points) {
