@@ -6,29 +6,29 @@ import java.util.Set;
 
 public class MatrixChecker {
 
-    public Boolean[][] aboveThreshold(Integer[][] toCheck, int threshold) {
+    public boolean[][] aboveThreshold(Integer[][] toCheck, int threshold) {
         int rows = toCheck.length;
         int columns = toCheck[0].length;
-        Boolean[][] toReturn = new Boolean[rows][columns];
+        boolean[][] toReturn = new boolean[rows][columns];
         for (int row = 0; row < rows; row++) {
             for(int col = 0; col < columns; col++) {
                 if (toCheck[row][col] >= threshold) {
                     toReturn[row][col] = true;
-                } else {
-                    toReturn[row][col] = false;
-                }
+                } //else {
+//                    toReturn[row][col] = false;
+//                }
             }
         }
         return toReturn;
     }
 
 
-    public List<Point> getPoints(Boolean[][] toCheck) {
+    public List<Point> getPoints(boolean[][] toCheck) {
         List<Point> points = new ArrayList<>();
         for (int row = 0; row < toCheck.length; row++) {
-            Boolean[] rows = toCheck[row];
+            boolean[] rows = toCheck[row];
             for (int col = 0; col < rows.length; col++) {
-                Boolean isAboveThreshold = rows[col];
+                boolean isAboveThreshold = rows[col];
                 if (isAboveThreshold) {
                     points.add(new Point(row, col));
                 }
@@ -74,7 +74,7 @@ public class MatrixChecker {
         };
 
         MatrixChecker matrixChecker = new MatrixChecker();
-        Boolean[][] threshold = matrixChecker.aboveThreshold(table, 200);
+        boolean[][] threshold = matrixChecker.aboveThreshold(table, 200);
         List<Point> points = matrixChecker.getPoints(threshold);
 
         System.out.println("***********");

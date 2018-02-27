@@ -22,5 +22,8 @@ public class AdjacentPointTest {
         Point p3 = new Point(3, 3);
         assertFalse(adjacentPoint.isAdj(p1, p3));
         assertTrue(adjacentPoint.isAdj(p2, p3));
+        Point p45 = new Point(4, 5);
+        Point p55 = new Point(5, 5);
+        assertTrue(adjacentPoint.isAdj(p45, p55));
     }
 }
