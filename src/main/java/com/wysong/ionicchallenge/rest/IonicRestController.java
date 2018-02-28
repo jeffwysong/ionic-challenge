@@ -1,7 +1,7 @@
-package com.wysong.ionicchallange.rest;
+package com.wysong.ionicchallenge.rest;
 
-import com.wysong.ionicchallange.Point;
-import com.wysong.ionicchallange.business.IonicChallengeManager;
+import com.wysong.ionicchallenge.Point;
+import com.wysong.ionicchallenge.business.IonicChallengeManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

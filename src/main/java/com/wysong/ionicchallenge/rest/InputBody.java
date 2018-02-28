@@ -1,4 +1,4 @@
-package com.wysong.ionicchallange.rest;
+package com.wysong.ionicchallenge.rest;
 
 import java.util.Arrays;
 import java.util.Objects;

@@ -1,10 +1,10 @@
-package com.wysong.ionicchallange;
+package com.wysong.ionicchallenge;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wysong.ionicchallange.rest.CombinedReturnBody;
-import com.wysong.ionicchallange.rest.InputBody;
+import com.wysong.ionicchallenge.rest.CombinedReturnBody;
+import com.wysong.ionicchallenge.rest.InputBody;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

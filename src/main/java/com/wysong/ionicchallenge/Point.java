@@ -1,4 +1,4 @@
-package com.wysong.ionicchallange;
+package com.wysong.ionicchallenge;
 
 //TODO: Refactor solution to add weight for convenience
 public class Point extends java.awt.Point {

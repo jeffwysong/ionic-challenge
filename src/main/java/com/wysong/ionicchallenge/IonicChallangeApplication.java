@@ -1,4 +1,4 @@
-package com.wysong.ionicchallange;
+package com.wysong.ionicchallenge;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

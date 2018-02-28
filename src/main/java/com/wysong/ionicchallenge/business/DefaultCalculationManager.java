@@ -1,6 +1,6 @@
-package com.wysong.ionicchallange.business;
+package com.wysong.ionicchallenge.business;
 
-import com.wysong.ionicchallange.Point;
+import com.wysong.ionicchallenge.Point;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

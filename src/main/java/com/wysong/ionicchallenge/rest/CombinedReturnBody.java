@@ -1,6 +1,6 @@
-package com.wysong.ionicchallange.rest;
+package com.wysong.ionicchallenge.rest;
 
-import com.wysong.ionicchallange.Point;
+import com.wysong.ionicchallenge.Point;
 
 import java.util.Objects;
 import java.util.Set;

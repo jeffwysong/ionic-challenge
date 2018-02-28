@@ -1,4 +1,4 @@
-package com.wysong.ionicchallange.business;
+package com.wysong.ionicchallenge.business;
 
 import org.springframework.stereotype.Service;
 
