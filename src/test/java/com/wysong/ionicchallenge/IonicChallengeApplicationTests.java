@@ -53,10 +53,10 @@ public class IonicChallengeApplicationTests {
         Set<Set<Point>> allAdjacents = getAdjacentSets();
         Set<Set<Point>> toCheck = new HashSet<>(3);
         JsonNode jsonNode = objectMapper.readTree(stringResponseEntity.getBody());
-        System.out.println(jsonNode);
+//        System.out.println(jsonNode);
         if (jsonNode.isArray()) {
             for (JsonNode node : jsonNode) {
-                System.out.println(node);
+//                System.out.println(node);
                 Set<Point> adjacents = getPoints(node);
                 toCheck.add(adjacents);
             }
@@ -77,7 +77,7 @@ public class IonicChallengeApplicationTests {
         Point p41 = new Point(4, 1);
 
         JsonNode jsonNode = objectMapper.readTree(stringResponseEntity.getBody());
-        System.out.println(jsonNode);
+//        System.out.println(jsonNode);
         if (jsonNode.isArray()) {
             Set<Point> points = getPoints(jsonNode);
             assertThat(points).containsExactlyInAnyOrder(p15, p24, p41);
@@ -95,7 +95,7 @@ public class IonicChallengeApplicationTests {
         Point p41 = new Point(4, 1);
 
         JsonNode jsonNode = objectMapper.readTree(stringResponseEntity.getBody());
-        System.out.println(jsonNode);
+//        System.out.println(jsonNode);
         if (jsonNode.isArray()) {
             Set<CombinedReturnBody> combinedReturnBodies = new HashSet<>(3);
             for (JsonNode node : jsonNode) {
