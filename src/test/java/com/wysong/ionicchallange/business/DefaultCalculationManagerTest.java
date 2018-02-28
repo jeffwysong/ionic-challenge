@@ -30,5 +30,6 @@ public class DefaultCalculationManagerTest {
 
         Point centerOfMassPoint = defaultCalculationManager.getCenterOfMass(points, ints);
         System.out.println(centerOfMassPoint);
+        assertEquals(new Point(1,1), centerOfMassPoint);
     }
 }

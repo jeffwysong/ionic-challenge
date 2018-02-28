@@ -10,9 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
-@RestController("/")
+/**
+ * REST controller that provides endpoints to get adjacent points or the center of mass.
+ */
+//TODO: Create better exception handling.
+@RestController()
 public class IonicRestController {
 
     private final IonicChallengeManager ionicChallengeManager;
@@ -22,9 +28,32 @@ public class IonicRestController {
         this.ionicChallengeManager = ionicChallengeManager;
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/adjacents", method = RequestMethod.POST)
     ResponseEntity getAdjacents(@RequestBody InputBody inputBody) {
         Set<Set<Point>> adjacents = ionicChallengeManager.getAdjacents(inputBody.getInputMatrix(), inputBody.getThreshold());
         return new ResponseEntity(adjacents, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/centermass", method = RequestMethod.POST)
+    ResponseEntity getCenterOfMass(@RequestBody InputBody inputBody) {
+        Set<Point> centerOfMassPoints = ionicChallengeManager.getCenterOfMass(inputBody.getInputMatrix(), inputBody.getThreshold());
+        return new ResponseEntity(centerOfMassPoints, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/centermass/adjacents", method = RequestMethod.POST)
+    ResponseEntity getCenterOfMassWithAdjacents(@RequestBody InputBody inputBody) {
+        Set<Point> centerOfMassPoints = ionicChallengeManager.getCenterOfMass(inputBody.getInputMatrix(), inputBody.getThreshold());
+        Set<Set<Point>> adjacents = ionicChallengeManager.getAdjacents(inputBody.getInputMatrix(), inputBody.getThreshold());
+        List<CombinedReturnBody> combinedReturnBodies = new ArrayList<>(centerOfMassPoints.size());
+        for (Point centerOfMassPoint : centerOfMassPoints) {
+            for (Set<Point> adjacent : adjacents) {
+                if (adjacent.contains(centerOfMassPoint)) {
+                    CombinedReturnBody combinedReturnBody = new CombinedReturnBody(adjacent, centerOfMassPoint);
+                    combinedReturnBodies.add(combinedReturnBody);
+                    break;
+                }
+            }
+        }
+        return new ResponseEntity(combinedReturnBodies, HttpStatus.OK);
     }
 }
