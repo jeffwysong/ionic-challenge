@@ -8,6 +8,34 @@ threshold value T. Cells that are touching at corners are considered to be (diag
 I assumed that if the input matrix contained a null value instead of an int, I changed that to Integer.MIN_VALUE so that
 it would never be above a given threshold.
 
+Problem
+========
+1. Write down a function that takes two inputs:
+• a two-dimensional array of values
+• a threshold T
+ and determines this output:
+• A list of (X,Y) value pairs that identify the center of mass of each region of interest. (There will be
+one X,Y coordinate pair for each sub-region.) Define "center of mass" for a given sub-region to be
+the average position, expressed in X,Y coordinates, of the cells in that sub-region, each cell's location
+being weighted by that cell's signal value.
+Feel free to express your response as compilable code. (If you do, please include any make or project files.)
+
+Please see below instructions on how to run the rest api with httpie or curl examples to test out the functionality.
+If just the center of mass is desired for each sub-region, please use the http://localhost:8080/centermass endpoint.
+To technically answer the question, please see DefaultIonicChallengeManager for the actual function implementation.
+
+2. Discuss a preferred strategy for testing the function you defined in part 1, including how you might
+automate the testing, how you would select test input cases (feel free to enumerate cases), and how you would
+determine whether each test case results in a pass or fail. 
+
+My preferred strategy for testing is using is verifying that the happy cases work and then test with edge cases and
+known bad input.  
+I created integration tests to cover the happy cases for input and a few cases of bad inputs.  Manual tests can be
+done using httpie or curl and if bugs are found, tests can be added to the IonicChallengeApplicationTests class
+to cover those cases.  I would consider test cases to pass if the adjacent points are returned correctly and the
+center of mass found.
+
+
 Requirements
 ============
 
