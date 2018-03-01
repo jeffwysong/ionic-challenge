@@ -12,7 +12,8 @@ Problem
 ========
 1. Write down a function that takes two inputs:
     * a two-dimensional array of values
-    * a threshold T
+    * a threshold T  
+    
  and determines this output:
     * A list of (X,Y) value pairs that identify the center of mass of each region of interest. (There will be
 one X,Y coordinate pair for each sub-region.) Define "center of mass" for a given sub-region to be
